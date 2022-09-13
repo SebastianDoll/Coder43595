@@ -11,7 +11,7 @@ Comentario de bloque 2
 
 // camel case
 
-let nombreProducto
+/* let nombreProducto
 
 let year
 
@@ -47,7 +47,7 @@ let num2 = 3
 
 let num3 = num1 - num2
 
-console.log(num3)
+console.log(num3) */
 
 /* alert("Bienvenido!")
 
@@ -55,24 +55,40 @@ let numeroIngresado = prompt("Ingrese un numero:") */
 
 //console.log(numeroIngresado)
 
+/* let verdadero = true
+let esFalso = false */
 
-//2 Productos -> Mostrar prods -> Compra? 
-// Que cantidad? -> Mostrar Precio total compra
+/* let numero = prompt("Ingrese un numero:")
 
-let nombreProductoA = 'Mesa'
-let precioProductoA = 100
+if(numero > 5){
+    console.log("El numero es mayor")
+}
 
-let nombreProductoB = 'Silla'
-let precioProductoB = 10
+console.log("Este es el final") */
 
-alert("Acepte si quiere comprar: " + nombreProductoA + " y " + nombreProductoB)
 
-let cantidadProductoA = prompt("ingrese que cantidad de " + nombreProductoA + " desea comprar:")
-let cantidadProductoB = prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar:")
+/* let texto = prompt("Ingrese SI para comprar \nIngrese NO para salir")
 
-let precioTotalA = cantidadProductoA * precioProductoA
-let precioTotalB = cantidadProductoB * precioProductoB
+if(texto == "SI"){
+    alert("Gracias por su respuesta")
+}
+else{
+    alert("Gracias vuelva prontos")
+} */
 
-let precioTotal = precioTotalA + precioTotalB
+let precio = prompt("Ingrese un numero:")
 
-alert("El precio total es: " + precioTotal) 
+if (precio < 100) { // 0 - 99
+ alert("El precio es menor que 100");
+}
+else if (precio < 50) { // 20 - 49
+ alert("El precio es menor que 50");
+}
+else if (precio < 20) { // 0 - 19
+    alert("El precio es menor que 20");
+   }
+else { 
+ alert("El precio es mayor que 100");
+}
+
+console.log("Fin")
