@@ -76,7 +76,7 @@ else{
     alert("Gracias vuelva prontos")
 } */
 
-let precio = prompt("Ingrese un numero:")
+/* let precio = prompt("Ingrese un numero:")
 
 if (precio < 100) { // 0 - 99
  alert("El precio es menor que 100");
@@ -91,4 +91,54 @@ else {
  alert("El precio es mayor que 100");
 }
 
-console.log("Fin")
+console.log("Fin") */
+
+
+
+/* for(let i = 0; i < 10; i = i + 1){
+    
+    if(i == 5){
+        continue
+    }
+
+    console.log(i)
+}
+
+console.log("Este es el fin") */
+
+/* let flag = true
+
+while(flag){
+
+    if(nombre != "Pedro"){
+        flag = false
+    }
+} */
+
+let entrada = prompt("1 - Cuentas\n2 - Cajero\n3- Contador\n ESC - Salir");
+
+while(entrada != "ESC" ){
+    alert("El usuario ingresó "+ entrada);
+    //Volvemos a solicitar un dato. En la próxima iteración se evalúa si no es ESC.
+    entrada = prompt("1 - Cuentas\n2 - Cajero\n3- Contador\n ESC - Salir");
+   }
+
+/* let i = 0
+
+do{
+    console.log("¡Solo una vez!");
+}
+while(false) */
+
+/* while(false){
+    console.log("¡Solo una vez!");
+} */
+
+/* i = 1 --> i <= 10  --> true
+alert("El numero es el: " + 1)
+i = 2 --> i <= 10  --> true
+alert("El numero es el: " + 2)
+i = 3 --> i <= 10  --> true
+alert("El numero es el: " + 3)
+i = 11 --> i <= 10  --> false */
+
