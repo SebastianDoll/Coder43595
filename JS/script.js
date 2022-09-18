@@ -115,14 +115,14 @@ while(flag){
     }
 } */
 
-let entrada = prompt("1 - Cuentas\n2 - Cajero\n3- Contador\n ESC - Salir");
+/* let entrada = prompt("1 - Cuentas\n2 - Cajero\n3- Contador\n ESC - Salir");
 
 while(entrada != "ESC" ){
     alert("El usuario ingresó "+ entrada);
     //Volvemos a solicitar un dato. En la próxima iteración se evalúa si no es ESC.
     entrada = prompt("1 - Cuentas\n2 - Cajero\n3- Contador\n ESC - Salir");
    }
-
+ */
 /* let i = 0
 
 do{
@@ -142,3 +142,16 @@ i = 3 --> i <= 10  --> true
 alert("El numero es el: " + 3)
 i = 11 --> i <= 10  --> false */
 
+
+/* let numero1 = parseInt(prompt("ingrese un numero:"))
+
+console.log(numero1)
+
+let numero2 = parseInt(prompt("ingrese otro numero:"))
+
+alert(numero1 + numero2) */
+
+for(let i = 1; i <= 10; i++){
+    let nombre = prompt("ingrese su nombre:")
+    alert("Bienvenid@ " + nombre + " su turno es el N: " + i)
+}

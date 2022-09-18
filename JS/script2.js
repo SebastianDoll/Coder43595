@@ -21,7 +21,7 @@ alert("Estos son nuestros productos: \n - Mesa\n - Silla\n - Lampara")
 
 //Ciclo de compra con FOR
 
-/* let cantidadCompra = prompt("Que cantidad de productos distintos quiere comprar:")
+/* let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
 
@@ -38,11 +38,21 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
     }
     else if(productoCompra == 'Silla'){
         let cantidadProductoSilla = prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar:")
-        precioTotal = precioTotal + (cantidadProductoSilla * precioProductoB)
+        if(cantidadProductoSilla <= stockProductoB){
+            precioTotal = precioTotal + (cantidadProductoSilla * precioProductoB)
+        }
+        else{
+            alert("Actualmente tenemos " + stockProductoB + " unidades de este producto")
+        }
     }
     else if(productoCompra == 'Lampara'){
         let cantidadProductoLampara = prompt("ingrese que cantidad de " + nombreProductoC + " desea comprar:")
-        precioTotal = precioTotal + (cantidadProductoLampara * precioProductoC)
+        if(cantidadProductoLampara <= stockProductoC){
+            precioTotal = precioTotal + (cantidadProductoLampara * precioProductoC)
+        }
+        else{
+            alert("Actualmente tenemos " + stockProductoC + " unidades de este producto")
+        }
     }
     else{
         alert("No tenemos ese producto a la venta")
@@ -61,7 +71,7 @@ let opcion = prompt("Ingrese que es lo que quiere comprar o ESC para salir")
 while(opcion != "ESC"){
     
     if(opcion.toUpperCase() == 'MESA'){
-        let cantidadProductoMesa = prompt("ingrese que cantidad de " + nombreProductoA + " desea comprar:")
+        let cantidadProductoMesa = parseInt(prompt("ingrese que cantidad de " + nombreProductoA + " desea comprar:"))
         if(cantidadProductoMesa <= stockProductoA){
             precioTotal = precioTotal + (cantidadProductoMesa * precioProductoA)
         }
@@ -69,13 +79,23 @@ while(opcion != "ESC"){
             alert("Actualmente tenemos " + stockProductoA + " unidades de este producto")
         }
     }
-    else if(opcion == 'Silla'){
-        let cantidadProductoSilla = prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar:")
-        precioTotal = precioTotal + (cantidadProductoSilla * precioProductoB)
+    else if(productoCompra == 'Silla'){
+        let cantidadProductoSilla = parseInt(prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar:"))
+        if(cantidadProductoSilla <= stockProductoB){
+            precioTotal = precioTotal + (cantidadProductoSilla * precioProductoB)
+        }
+        else{
+            alert("Actualmente tenemos " + stockProductoB + " unidades de este producto")
+        }
     }
-    else if(opcion == 'Lampara'){
-        let cantidadProductoLampara = prompt("ingrese que cantidad de " + nombreProductoC + " desea comprar:")
-        precioTotal = precioTotal + (cantidadProductoLampara * precioProductoC)
+    else if(productoCompra == 'Lampara'){
+        let cantidadProductoLampara = parseInt(prompt("ingrese que cantidad de " + nombreProductoC + " desea comprar:"))
+        if(cantidadProductoLampara <= stockProductoC){
+            precioTotal = precioTotal + (cantidadProductoLampara * precioProductoC)
+        }
+        else{
+            alert("Actualmente tenemos " + stockProductoC + " unidades de este producto")
+        }
     }
     else{
         alert("No tenemos ese producto a la venta")
@@ -85,4 +105,7 @@ while(opcion != "ESC"){
 
 if(precioTotal != 0){
     alert("El precio total es: " + precioTotal)
+}
+else{
+    alert("Gracias por su visita!")
 }
