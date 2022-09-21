@@ -79,7 +79,7 @@ while(opcion != "ESC"){
             alert("Actualmente tenemos " + stockProductoA + " unidades de este producto")
         }
     }
-    else if(productoCompra == 'Silla'){
+    else if(opcion == 'Silla'){
         let cantidadProductoSilla = parseInt(prompt("ingrese que cantidad de " + nombreProductoB + " desea comprar:"))
         if(cantidadProductoSilla <= stockProductoB){
             precioTotal = precioTotal + (cantidadProductoSilla * precioProductoB)
@@ -88,7 +88,7 @@ while(opcion != "ESC"){
             alert("Actualmente tenemos " + stockProductoB + " unidades de este producto")
         }
     }
-    else if(productoCompra == 'Lampara'){
+    else if(opcion == 'Lampara'){
         let cantidadProductoLampara = parseInt(prompt("ingrese que cantidad de " + nombreProductoC + " desea comprar:"))
         if(cantidadProductoLampara <= stockProductoC){
             precioTotal = precioTotal + (cantidadProductoLampara * precioProductoC)

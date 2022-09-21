@@ -151,7 +151,54 @@ let numero2 = parseInt(prompt("ingrese otro numero:"))
 
 alert(numero1 + numero2) */
 
-for(let i = 1; i <= 10; i++){
+/* for(let i = 1; i <= 10; i++){
     let nombre = prompt("ingrese su nombre:")
     alert("Bienvenid@ " + nombre + " su turno es el N: " + i)
+} */
+
+/* function bienvenida(a, b){
+    alert("Bienvenido " + a + " " + b)
+    console.log(a)
 }
+
+bienvenida(5, 15)
+bienvenida("Ana", "Perez")
+bienvenida("Noah", "Zla") */
+
+/* function suma(a, b){
+   return a + b;
+}
+
+let resultado = suma(5, 10)
+console.log(resultado) */
+//let nombre = prompt("ingrese su nombre: ")
+
+
+
+function calculadora(primerNumero, segundoNumero, operacion) {
+    switch(operacion) {
+        case "+":
+            return primerNumero + segundoNumero;
+            break;
+        case "-":
+            return primerNumero - segundoNumero;
+            break;
+        case "*":
+            return primerNumero * segundoNumero;
+            break;
+        case "/":
+            return primerNumero / segundoNumero;
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
+let numeroA = parseInt(prompt("Ingrese el numero:"))
+
+let operacion = prompt("ingrese que operacion desea realizar:")
+
+let numeroB = parseInt(prompt("Ingrese otro numero:"))
+
+alert(calculadora(numeroA, numeroB, operacion))
