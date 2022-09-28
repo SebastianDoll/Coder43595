@@ -173,7 +173,7 @@ let resultado = suma(5, 10)
 console.log(resultado) */
 //let nombre = prompt("ingrese su nombre: ")
 
-
+/* 
 
 function calculadora(primerNumero, segundoNumero, operacion) {
     switch(operacion) {
@@ -201,4 +201,27 @@ let operacion = prompt("ingrese que operacion desea realizar:")
 
 let numeroB = parseInt(prompt("Ingrese otro numero:"))
 
-alert(calculadora(numeroA, numeroB, operacion))
+alert(calculadora(numeroA, numeroB, operacion)) */
+
+
+//                  0   1       2
+let listaNumeros = [15, 20, "Coder", 30]
+
+console.log(listaNumeros.join(", "))
+                
+
+/* let nombre = prompt("Ingrese su nombre:")
+
+listaNumeros.unshift(nombre) */
+
+//let primerElemento = listaNumeros.shift()
+
+/* let segundoElemento = listaNumeros[1]
+
+console.log(segundoElemento) */
+
+//console.log(listaNumeros.length)
+
+/* for(let i = 0; i < listaNumeros.length; i++){
+    console.log(listaNumeros[i])
+} */

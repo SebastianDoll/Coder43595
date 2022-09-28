@@ -37,6 +37,18 @@ function Producto(nombre, precio, stock){
 let productoA = new Producto("Mesa", 100, 20)
 let productoB = new Producto("Silla", 10, 10)
 let productoC = new Producto("Lampara", 20)
+let productoD = new Producto("Piano", 20, 5)
+let productoE = new Producto("Armario", 20, 0)
+
+let listaProductos = [productoA, productoB, productoC, productoD, productoE]
+
+let listaNombres = []
+
+for(const prod of listaProductos){
+    if(prod.stock > 0){
+        listaNombres.push(prod.nombre)
+    }
+}
 
 //console.log(productoC.stock)
 
@@ -57,7 +69,7 @@ let precioTotal = 0
 
 //let compra = prompt("Ingrese SI si quiere comprar: " + nombreProductoA + " y " + nombreProductoB)
 
-alert("Estos son nuestros productos: \n - Mesa\n - Silla\n - Lampara")
+alert("Estos son nuestros productos: \n - " + listaNombres.join("\n - "))
 
 //Ciclo de compra con FOR
 
