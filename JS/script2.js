@@ -38,17 +38,21 @@ let productoA = new Producto("Mesa", 100, 20)
 let productoB = new Producto("Silla", 10, 10)
 let productoC = new Producto("Lampara", 20)
 let productoD = new Producto("Piano", 20, 5)
-let productoE = new Producto("Armario", 20, 0)
+let productoE = new Producto("Armario", 20, 20)
+let productoF = new Producto("TV", 20, 10)
 
-let listaProductos = [productoA, productoB, productoC, productoD, productoE]
+let listaProductos = [productoA, productoB, productoC, productoD, productoE, productoF]
 
-let listaNombres = []
+let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
 
-for(const prod of listaProductos){
+let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
+
+
+/* for(const prod of listaProductos){
     if(prod.stock > 0){
         listaNombres.push(prod.nombre)
     }
-}
+} */
 
 //console.log(productoC.stock)
 

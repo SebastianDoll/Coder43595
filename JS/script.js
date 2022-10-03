@@ -205,9 +205,9 @@ alert(calculadora(numeroA, numeroB, operacion)) */
 
 
 //                  0   1       2
-let listaNumeros = [15, 20, "Coder", 30]
+/* let listaNumeros = [15, 20, "Coder", 30]
 
-console.log(listaNumeros.join(", "))
+console.log(listaNumeros.join(", ")) */
                 
 
 /* let nombre = prompt("Ingrese su nombre:")
@@ -225,3 +225,44 @@ console.log(segundoElemento) */
 /* for(let i = 0; i < listaNumeros.length; i++){
     console.log(listaNumeros[i])
 } */
+
+/* function sumarRango(a,b){
+    let numeros = []
+    for(let i = a; i <= b; i++){
+        numeros.push(i)
+    }
+    const total = numeros.reduce((acumulador, elemento) => acumulador + elemento, 0)
+    return total
+}
+
+
+
+let total = 0
+
+for (let i = 1; i <= 10; i++) {
+    total += i
+}
+
+console.log("ciclo:", total)
+
+
+
+console.log("funcion:", sumarRango(1, 10) ) */
+
+let total = 0
+function acumular(num) {
+ total += num
+}
+
+
+function porCadaUno(array, fn) {
+    for (const elemento of array) {
+        fn(elemento)
+    }
+}
+
+let numeros = [1,3,4,5]
+
+porCadaUno(numeros, console.log)
+
+numeros.forEach( (numero) => console.log(numero))
