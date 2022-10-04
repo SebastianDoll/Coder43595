@@ -1,0 +1,22 @@
+#catalogo{
+    background-color: burlywood;
+    display: flex;
+}
+
+.card{
+    border: 5px;
+    border-color: black;
+    width: 100px;
+    background-color: aquamarine;
+    margin-right: 5px;
+}
+
+h4{
+    color: aquamarine;
+}
+
+.nuevaCard{
+    background-color: red;
+    width: 100px;
+    height: 40px;
+}

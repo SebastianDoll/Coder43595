@@ -69,6 +69,22 @@ let stockProductoB = 20 */
 let precioProductoC = 20
 let stockProductoC = 50 */
 
+/* catalogo.innerHTML = "<h2>Hola</h2>" */
+
+/* let nombre = prompt("ingrese su nombre: ")
+
+let catalogo = document.getElementById("catalogo")
+
+catalogo.innerText = "Bienvenido " + nombre
+
+console.log(catalogo.innerText) */
+
+let card = document.getElementsByClassName("card")
+
+console.log(card)
+
+card[0].className = "nuevaCard"
+
 let precioTotal = 0
 
 //let compra = prompt("Ingrese SI si quiere comprar: " + nombreProductoA + " y " + nombreProductoB)
