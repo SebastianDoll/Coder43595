@@ -37,20 +37,34 @@ function render(lista) {
 
         card.className = "card"
 
-        card.innerHTML = `<h2 class="titulo">${prod.nombre}</h2><p>Precio: $${prod.precio}</p>`
+        card.innerHTML = `<h2 class="titulo">${prod.nombre}</h2><p>Precio: $${prod.precio}</p><button>Comprame!</button>`
 
         catalogo.append(card)
     }
 }
 render(listaProductosConStock)
 
-let categoria = prompt("Ingrese la categoria que quiere ver:")
+let categoriaElegida = ''
 
-let filtroActual = listaProductos.filter((prod)=>prod.cat == categoria)
+let categoria = document.getElementById("categoria")
+categoria.addEventListener("change", ()=>{categoriaElegida = categoria.value})
+
+let botonFiltrado = document.getElementById("filtrar")
+botonFiltrado.addEventListener("click", filtrado)
 
 
+function filtrado(){
+    let filtroActual = listaProductos.filter((prod)=>prod.cat == categoriaElegida)
+    if(filtroActual.length == 0){
+        console.log("Esa categoria no existe")
+    }
+    render(filtroActual)
+}
 
-render(filtroActual)
+let botonTodos = document.getElementById("todos")
+
+botonTodos.addEventListener("click", ()=>{render(listaProductosConStock)})
+
 
 /* alert("Estos son nuestros productos: \n - " + listaNombres.join("\n - "))
 

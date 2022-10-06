@@ -249,7 +249,7 @@ console.log("ciclo:", total)
 
 console.log("funcion:", sumarRango(1, 10) ) */
 
-let total = 0
+/* let total = 0
 function acumular(num) {
  total += num
 }
@@ -265,4 +265,54 @@ let numeros = [1,3,4,5]
 
 porCadaUno(numeros, console.log)
 
-numeros.forEach( (numero) => console.log(numero))
+numeros.forEach( (numero) => console.log(numero)) */
+
+
+/* let nombreIngresado = parseInt(prompt("Ingresar valor inicial:"))
+
+function mostrarPorConsola(nombre){
+    console.log("Bienvenido " + nombre)
+}
+
+let boton = document.getElementById("primerBoton")
+
+boton.addEventListener("click", ()=>{mostrarPorConsola(nombreIngresado)}) */
+
+//CONTADOR
+/* let acumulador = 0
+
+function contador(){
+    acumulador += 1
+    console.log(acumulador)
+}
+
+let boton = document.getElementById("primerBoton")
+
+boton.addEventListener("click", contador) */
+
+/* let input1 = document.getElementById("nombre")
+let nombreIngresado = ''
+
+input1.addEventListener('change', ()=>{nombreIngresado = input1.value;
+                                        input1.value = ""})
+
+
+
+function mostrarPorConsola(nombre){
+    console.log("Bienvenido " + nombre)
+}
+
+let boton = document.getElementById("primerBoton")
+
+boton.addEventListener("click", ()=>{mostrarPorConsola(nombreIngresado)})
+*/
+
+let formulario = document.getElementById("formulario")
+
+formulario.addEventListener("submit", submitHandler)
+
+function submitHandler(evento){
+    evento.preventDefault()
+    console.log(evento.target.children[0].value)
+    console.log(evento.target.children[1].value)
+}
