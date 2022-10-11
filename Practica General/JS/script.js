@@ -307,7 +307,7 @@ let boton = document.getElementById("primerBoton")
 boton.addEventListener("click", ()=>{mostrarPorConsola(nombreIngresado)})
 */
 
-let formulario = document.getElementById("formulario")
+/* let formulario = document.getElementById("formulario")
 
 formulario.addEventListener("submit", submitHandler)
 
@@ -315,4 +315,23 @@ function submitHandler(evento){
     evento.preventDefault()
     console.log(evento.target.children[0].value)
     console.log(evento.target.children[1].value)
-}
+} */
+
+/* localStorage.setItem("unArray", [1,2,3])
+
+let valor = localStorage.getItem("unArray")
+
+console.log(valor)
+ */
+
+
+localStorage.setItem("unObjeto", JSON.stringify({nombre: "objeto", numero: 86}))
+
+/* localStorage.unObjeto = {nombre: "otroObjeto"} */
+
+/* let valor = JSON.parse(localStorage.getItem("unObjeto"))
+
+console.log(valor)
+
+console.log({nombre: "objeto", numero: 86}) */
+
