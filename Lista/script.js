@@ -9,15 +9,19 @@ let inputBox = document.getElementById("todo-entry-box")
 function addToDoItem(){
 
     let itemText = inputBox.value
-    newToDoItem(itemText)
+    newToDoItem(itemText, false)
     inputBox.value = ""
 }
 
 let toDoList = document.getElementById("todo-list")
 
-function newToDoItem(text){
+function newToDoItem(text, completed){
     let toDoItem = document.createElement("li")
     toDoItem.innerText = text
+
+    if(completed){
+        toDoItem.classList.add("completed")
+    }
 
     toDoList.append(toDoItem)
     toDoItem.addEventListener("click", toggleItemState)
@@ -73,3 +77,40 @@ function emptyList(){
     toDoList.innerHTML = ""
 
 }
+
+//Guardar Lista en el Storage
+
+let saveButton = document.getElementById("save-button")
+
+saveButton.addEventListener("click", saveList)
+
+function saveList(){
+
+    let items = []
+
+    for(let i = 0; i < toDoList.children.length; i++){
+        let item = toDoList.children[i]
+        console.log(item)
+
+        let itemInfo = {
+            task: item.innerText,
+            completed: item.classList.contains("completed")
+        }
+
+        items.push(itemInfo)
+    }
+
+    localStorage.setItem("list", JSON.stringify(items))
+}
+
+// Cargar lista del storage
+
+function loadList(){
+    let list = JSON.parse(localStorage.getItem("list"))
+    for(let i = 0; i < list.length; i++){
+        newToDoItem(list[i].task, list[i].completed)
+    }
+}
+
+loadList()
+console.log()
