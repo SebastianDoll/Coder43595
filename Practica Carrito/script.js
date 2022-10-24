@@ -77,8 +77,16 @@ listaDeProductos.forEach((prod) => {
 })
 
 function addProdToCart(event){
-    cart.push(event.target.getAttribute('mark'))
+    let id = event.target.getAttribute('mark')
+    cart.push(id)
     renderCart()
+
+    Toastify({
+        text: `Agregaste correctamente el producto id: ${id} al carrito`,
+        className: "info",
+        duration: 5000,
+        gravity: 'bottom'
+      }).showToast();
 }
 
 function renderCart(){
@@ -121,6 +129,10 @@ function deleteProduct(event){
     return cartId != id
  })
  renderCart()
+ Swal.fire({
+    title: "Eliminaste correctamente el producto!",
+    icon: 'success'
+ })
  
 }
 

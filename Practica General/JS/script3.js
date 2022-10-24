@@ -22,6 +22,8 @@ let listaProductos = [productoA, productoB, productoC, productoD, productoE, pro
 
 let listaProductosConStock = listaProductos.filter((prod) => prod.stock > 0)
 
+let listaProductosConStockMasProximosProductos = [...listaProductosConStock, productoNuevo, prodMasNuevo]
+
 let listaNombres = listaProductosConStock.map((prod) => prod.nombre)
 
 let precioTotal = 0
@@ -55,9 +57,8 @@ botonFiltrado.addEventListener("click", filtrado)
 
 function filtrado(){
     let filtroActual = listaProductos.filter((prod)=>prod.cat == categoriaElegida)
-    if(filtroActual.length == 0){
-        console.log("Esa categoria no existe")
-    }
+    filtroActual.length == 0 && console.log("Esa categoria no existe")
+
     render(filtroActual)
 }
 
@@ -66,40 +67,38 @@ let botonTodos = document.getElementById("todos")
 botonTodos.addEventListener("click", ()=>{render(listaProductosConStock)})
 
 
-/* alert("Estos son nuestros productos: \n - " + listaNombres.join("\n - "))
+alert("Estos son nuestros productos: \n - " + listaNombres.join("\n - "))
 
 function calculoPrecio(cantidad, precio){
     precioTotal += (cantidad * precio)
+    
 }
 
-function calculoStock(cantidad, stock, precio){
-    if(cantidad <= stock){
-        calculoPrecio(cantidad, precio)
-    }
-    else{
-        alert("Actualmente tenemos " + stock + " unidades de este producto")
-    }
+function calculoStock(cantidad, { stock, precio, nombre }){
+
+    /* let { stock, precio, nombre } = producto */
+    cantidad <= stock ? calculoPrecio(cantidad, precio) : alert("Actualmente tenemos " + stock + " unidades del producto " + nombre )
 }
 
-let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:"))
+let cantidadCompra = parseInt(prompt("Que cantidad de productos distintos quiere comprar:")) || 0
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
 
     let productoCompra = prompt("Ingrese que producto quiere comprar: \n - Mesa\n - Silla\n - Lampara")
     
     if(productoCompra.toUpperCase() == 'MESA'){
-        let cantidadProductoMesa = prompt("ingrese que cantidad de " + productoA.nombre + " desea comprar:")
-        calculoStock(cantidadProductoMesa, productoA.stock, productoA["precio"])
+        let cantidadProductoMesa = prompt("ingrese que cantidad de " + productoA.nombre + " desea comprar:") || 1
+        calculoStock(cantidadProductoMesa, productoA)
         productoA.restarStock(cantidadProductoMesa)
     }
     else if(productoCompra == 'Silla'){
-        let cantidadProductoSilla = prompt("ingrese que cantidad de " + productoB.nombre + " desea comprar:")
-        calculoStock(cantidadProductoSilla, productoB.stock, precioProductoB)
+        let cantidadProductoSilla = parseInt(prompt("ingrese que cantidad de " + productoB.nombre + " desea comprar:")) || 1
+        calculoStock(cantidadProductoSilla, productoB)
         productoB.restarStock(cantidadProductoSilla)
     }
     else if(productoCompra == 'Lampara'){
         let cantidadProductoLampara = prompt("ingrese que cantidad de " + productoC.nombre + " desea comprar:")
-        calculoStock(cantidadProductoLampara, stockProductoC, precioProductoC)
+        calculoStock(cantidadProductoLampara, productoC)
         productoC.restarStock(cantidadProductoLampara)
     }
     else{
@@ -108,9 +107,4 @@ for(let i = 0; i < cantidadCompra; i = i + 1){
 
 } 
 
-if(precioTotal != 0){
-    alert("El precio total es: " + precioTotal)
-}
-else{
-    alert("Gracias por su visita!")
-} */
+precioTotal != 0 ? alert("El precio total es: " + precioTotal) : alert("Gracias por su visita!")

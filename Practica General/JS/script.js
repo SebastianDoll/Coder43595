@@ -325,7 +325,7 @@ console.log(valor)
  */
 
 
-localStorage.setItem("unObjeto", JSON.stringify({nombre: "objeto", numero: 86}))
+/* localStorage.setItem("unObjeto", JSON.stringify({nombre: "objeto", numero: 86})) */
 
 /* localStorage.unObjeto = {nombre: "otroObjeto"} */
 
@@ -335,3 +335,25 @@ console.log(valor)
 
 console.log({nombre: "objeto", numero: 86}) */
 
+/* Swal.fire({
+    title: 'Bienvenido!',
+    icon: 'info',
+    timer: 3000,
+    timerProgressBar: true
+  }) */
+
+/* Version:
+(major)   (minor)     (fix)
+0.5.1
+1.          150.          1
+3.          7.          0
+4.          0.          0 */
+
+
+anime({
+    targets: '.el',
+    translateX: 250,
+    scale: 2,
+    rotate: '1turn',
+    duration: 2000
+  });
